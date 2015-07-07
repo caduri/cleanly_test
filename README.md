@@ -1,7 +1,4 @@
-this is a test project for getcleanly.com
-to get things running you can run
-pip install -r requirements.txt
-or create virtualenv and run the above command
+this is a test project for getcleanly.com to get things running you can run pip install -r requirements.txt or create virtualenv and run the command
 
 comments
 --------
