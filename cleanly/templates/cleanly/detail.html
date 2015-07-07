@@ -1,0 +1,18 @@
+{% extends "cleanly/cleanly_base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+<h1>{{ product.header }}</h1>
+<img src="{{product.pic.url}}" height='200'/>
+<ul>
+    <li>Description: {{ product.description }}</li>
+    <li>Price: {{ product.price }}$</li>
+</ul>
+{% if request.user.is_authenticated %}
+<form action="{% url 'cleanly:buy' product.id %}" method="post">
+{% csrf_token %}
+<input type="submit" value="Buy" />
+</form>
+{% endif %}
+{% endblock %}

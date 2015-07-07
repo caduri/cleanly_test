@@ -1,0 +1,10 @@
+{% extends "cleanly/cleanly_base.html" %}
+
+{% block content %}
+<h2>Products</h2>
+<ul>
+    {% for product in products %}
+        <li><p>{{ product.product_header }}, qunatity: {{ product.quantity }}</p></li>
+    {% endfor %}
+</ul>
+{% endblock %}
