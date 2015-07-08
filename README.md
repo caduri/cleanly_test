@@ -10,6 +10,5 @@ comments
 
 what left
 ---------
-1. add tests
-2. upload the proj to heroku
-3. use bootstrap
+1. upload the proj to heroku
+2. use bootstrap
