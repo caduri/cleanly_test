@@ -105,10 +105,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
-MEDIA_ROOT = '/Users/caduri/projects/python_projects/clean_test/clean_test/cleanly/static'
-MEDIA_URL='/static/'
+MEDIA_ROOT = '/Users/caduri/projects/python_projects/clean_test/clean_test/cleanly/media'
+MEDIA_URL='/media/'
 
 REGISTRATION_OPEN = True        # If True, users can register
 ACCOUNT_ACTIVATION_DAYS = 7     # One-week activation window; you may, of course, use a different value.
