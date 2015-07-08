@@ -124,5 +124,4 @@ DATABASES = {
 try:
     from .dev import *
 except Exception as e:
-    print "error"
     pass
