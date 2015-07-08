@@ -3,8 +3,6 @@ from django.http import HttpResponseRedirect
 from django.core.urlresolvers import reverse
 from django.views.generic import ListView
 from django.contrib.auth.decorators import login_required
-# from django.contrib.auth.models import User
-# from django.contrib.auth.forms import UserCreationForm
 from django.contrib import auth
 
 from .models import Product
@@ -37,7 +35,6 @@ def thank_you(request, product_id):
     return render(request, 'cleanly/thank_you.html', {'product': p})
 
 def login(request):
-    context = {}
     if request.method == 'POST':
         username = request.POST.get('username', '')
         password = request.POST.get('password', '')
@@ -45,7 +42,7 @@ def login(request):
         if user is not None and user.is_active:
             # Correct password, and the user is marked "active"
             auth.login(request, user)
-            # Redirect to a success page.
+
     return HttpResponseRedirect(reverse('cleanly:index'))
 
 @login_required(login_url='/')

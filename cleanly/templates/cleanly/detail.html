@@ -4,7 +4,9 @@
 
 {% block content %}
 <h1>{{ product.header }}</h1>
+{% if product.pic %}
 <img src="{{product.pic.url}}" height='200'/>
+{% endif %}
 <ul>
     <li>Description: {{ product.description }}</li>
     <li>Price: {{ product.price }}$</li>
