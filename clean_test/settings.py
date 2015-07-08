@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '5j&gl*_7q=y=d3g%zn)9x_epo@*$%2he-xotd-za@o=mzqf&)b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -111,15 +111,14 @@ LOGIN_URL = '/'                 # The page users are directed to if they are not
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
-# we only need the engine name, as heroku takes care of the rest
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql_psycopg2",
-    }
-}
-
 # try to load local_settings.py if it exists
 try:
     from .dev import *
 except Exception as e:
     pass
+
+if not DEBUG:
+    try:
+        from .heroku import *
+    except Exception as e:
+        pass
