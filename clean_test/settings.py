@@ -107,7 +107,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIA_ROOT = '/Users/caduri/projects/python_projects/clean_test/clean_test/cleanly/media'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL='/media/'
 
 REGISTRATION_OPEN = True        # If True, users can register
