@@ -25,7 +25,7 @@ SECRET_KEY = '5j&gl*_7q=y=d3g%zn)9x_epo@*$%2he-xotd-za@o=mzqf&)b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -75,17 +75,6 @@ WSGI_APPLICATION = 'clean_test.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'caduri',
-        'USER': 'caduri',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': ''
-    }
-}
 
 
 # Internationalization
