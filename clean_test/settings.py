@@ -39,6 +39,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'cleanly',
     'registration',
+    'storages',
+    'boto',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -76,6 +78,9 @@ WSGI_APPLICATION = 'clean_test.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
+import dj_database_url
+
+DATABASES = { 'default' : dj_database_url.config()}
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
@@ -105,3 +110,19 @@ REGISTRATION_AUTO_LOGIN = True  # If True, the user will be automatically logged
 LOGIN_REDIRECT_URL = '/'        # The page you want users to arrive at after they successful log in
 LOGIN_URL = '/'                 # The page users are directed to if they are not logged in,
                                 # and are trying to access pages requiring authentication
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+# we only need the engine name, as heroku takes care of the rest
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+    }
+}
+
+# try to load local_settings.py if it exists
+try:
+    from .dev import *
+except Exception as e:
+    print "error"
+    pass
