@@ -39,8 +39,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'cleanly',
     'registration',
-    'storages',
-    'boto',
 )
 
 MIDDLEWARE_CLASSES = (
